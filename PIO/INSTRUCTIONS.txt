@@ -1,0 +1,53 @@
+Welcome to Vision External 1.0
+
+We're aware of existing issues such as the dragging bug and are actively working to resolve them.
+
+Instructions for Getting Started with Vision External:
+Launch the Application:
+Begin by starting the visiondeck.exe program on your computer.
+
+Login to Your Account:
+Visit the following URL to log in: https://byfron.xyz/login
+
+Redeem Your License Key:
+If you haven't done so already, redeem your license key that you've purchased from Sellix in the settings section on visions website.
+
+Vision Dashboard:
+After redeeming your license, return to the Vision dashboard on the website and copy your Auth username and Auth password.
+
+Re-open Vision_External:
+Open Vision_External once more and log in with the credentials you just obtained.
+
+Join the Teleporter Game:
+Join the game Teleporter on Roblox by following this link: https://www.roblox.com/games/15049129410/
+
+Access the Teleporter UI:
+In the game, press the minus key (-) to open the teleporter UI.
+
+Teleport to a Game:
+Use the game ID from the Fencing game or any game with tools example: (12109643) to teleport within the application.
+
+Attach Vision to the Game:
+Once teleported, reopen the Vision_External application, click on the code icon tab, and then the bandage icon located at the bottom left to attach Vision to the game.
+
+Initialize the Script:
+When you see a message box stating "init script," click okay. Then, equip your tool, and you should see "roblox bridge starting, please wait." After waiting 5-10 seconds, a "bridge started" message should appear.
+
+Execute the Script:
+Return to Vision's UI and press the execute button, which looks like a play symbol, at the bottom right. If followed correctly, it should execute the script and output the results to the console.
+
+Troubleshooting Issues:
+If the bridge does not start or the script does not execute, restart Roblox.
+If Roblox crashes in your web browser, consider using the UWP (Universal Windows Platform) of roblox  version for better stability.
+Currently, there is no CoreGUI support; ensure all scripts are parented under playerGUI.
+
+Available Functions:
+Use httpget() to perform HTTP GET requests.
+Use loadstring() to load and run strings as Lua code.
+Use writefile() to write data to a file.
+Use listfiles() to list files in a directory.
+Use bbc() for special bbc rewards
+Use freerobux() HEHEHE
+
+Credits
+ - Thanks to the whole external team for this!

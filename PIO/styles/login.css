@@ -1,0 +1,304 @@
+@font-face {
+    font-family: 'Kontotra';
+    src: url('../fonts/Kontora-Black.otf') format('opentype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+:root {
+    background-color: #010216;
+    font-family: 'Kontotra';
+    overflow: hidden;
+    user-select: none;
+    height: 100%;
+}
+
+body {
+    animation: fadeIn 1.2s ease-in-out 0s forwards;
+}
+
+::selection {
+    background: #73bbff59;
+    color: white;
+}
+
+.progress-text {
+    margin-left: 34px;
+    margin-top: 40px; 
+    color: white; 
+    font-size: 25px;
+    font-weight: 600;
+} 
+
+.progress-bar {
+    position: relative;
+    margin-top: 60px;
+    margin-left: 60px;
+    width: 6px;
+    height: 350px;
+    background-color: #010216;
+    outline: 1px solid #6C63FF;
+    border-radius: 7px;
+}
+
+.filler {
+    position: absolute;
+    top: 0;
+    background-color: #6C63FF;
+    width: 100%;
+    height: 0%;
+    border-radius: 7px;
+    transition: height 0.5s ease-in-out;
+}
+
+.circle {
+    position: absolute;
+    margin-left: 10px;
+    width: 15px;
+    left: -14px;
+    height: 15px;
+    background-color: #010216;
+    outline: 1px solid #6C63FF;
+    border-radius: 50%;
+}
+
+.circle:nth-of-type(1) { top: 0%; }
+.circle:nth-of-type(2) { top: 33% ; }
+.circle:nth-of-type(3) { top: 66% }
+.circle:nth-of-type(4) { top: 97%; }
+
+.circle-text-left {
+    color: #bbbbbb;
+    position: absolute;
+    right: 100%;
+    white-space: nowrap;
+    margin-right: 10px;
+    font-weight: 600;
+    font-size: 13px;
+    margin-top: 2px;
+    margin-right: 15px;
+}
+
+.circle-text-right {
+    color: #bbbbbb;
+    position: absolute;
+    left: 100%;
+    white-space: nowrap;
+    margin-left: 15px;
+    font-weight: 600;   
+    font-size: 13px;
+    margin-top: 2px;
+}
+
+.blur-background {
+    margin-top: -200px;
+    margin-left: 620px;
+    width: 600px;
+    height: 600px;
+    background-color: #6816b42c;
+    filter: blur(100px);
+    z-index: -1;
+}
+
+.login-form {
+    display: flex;
+    position: absolute;
+    z-index: 1;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 580px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 250px;
+    padding: 20px;
+    color: white;
+    border-radius: 7px;
+}
+
+.login-form input {
+    font-family: 'Kontotra';
+    font-weight: 600;
+    font-size: 12px;
+    outline: none;
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: transparent;
+    border: 1px solid #6C63FF;
+    color: white;
+    border-radius: 7px;
+    box-sizing: border-box;
+}
+
+.login-form button {
+    font-family: 'Kontotra';
+    font-weight: 600;
+    font-size: 12px;
+    width: 90%;
+    padding: 10px;
+    background-color: #6C63FF;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 7px;
+    margin-top: 10px;
+}
+
+.signup {
+    font-size: 12px;
+}
+
+.signup-link {
+    color: #6C63FF;
+    text-decoration: none;
+    font-weight: 600;
+    margin-left: 3px;
+    cursor: pointer;
+   
+}
+        
+.login-text {
+    margin-top: 30px; 
+    margin-bottom: 50px;
+    color: white; 
+    font-size: 25px;
+    font-weight: 600;
+} 
+
+.login-form input:focus {
+    border-color: #8656c4
+}
+
+.login-form button:hover {
+    background-color: #8656c4
+}
+
+.signup-link:hover {
+    color: #8656c4
+}
+
+.login-form button:active {
+    border-color: #8656c4
+}
+
+
+.lds-ring {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    text-align: center;
+    margin-left: 650px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 80px;
+    height: 80px;
+}
+
+ .lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border: 8px solid #6C63FF;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: #6C63FF transparent transparent transparent;
+}
+
+.lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;    
+}
+
+.lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+}
+
+.lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+}
+
+
+.wrapper {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    text-align: center;
+    margin-left: 650px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 80px;
+    height: 80px;
+}
+
+.checkmark-circle {
+    stroke-dasharray: 166;
+    stroke-dashoffset: 166;
+    stroke-width: 2;
+    stroke-miterlimit: 10;
+    stroke: none;
+    fill: none;
+    animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+
+.checkmark {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: block;
+    stroke-width: 2;
+    stroke: #fff;
+    stroke-miterlimit: 10;
+    margin: 10% auto;
+    animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
+}
+
+.checkmark-check {
+    transform-origin: 50% 50%;
+    stroke-dasharray: 48;
+    stroke-dashoffset: 48;
+    animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+}
+
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+  display: none;
+}
+
+@keyframes stroke {
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes scale {
+    0%, 100% {
+        transform: none;
+    }
+    50% {
+        transform: scale3d(1.1, 1.1, 1);
+    }
+}
+
+@keyframes fill {
+    100% {
+        box-shadow: inset 0px 0px 0px 30px #6C63FF
+    }
+}
+
+@keyframes lds-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}

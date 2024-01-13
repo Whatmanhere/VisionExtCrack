@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Draggable Element</title>
+    <style>
+        /* Style for the draggable element */
+        .draggable {
+            width: 100px;
+            height: 20px;
+            background-color: rgba(30, 144, 255, 0);
+            color: white;
+            text-align: center;
+            line-height: 100px;
+            position: absolute;
+            cursor: move;
+            font-size: 10px;
+            z-index: 9999;
+        }
+    </style>
+        <link rel="stylesheet" type="text/css" href="../styles/root.css">
+        <link rel="stylesheet" type="text/css" href="../styles/editor.css">
+        <link rel="stylesheet" type="text/css" href="../styles/top.css">
+        <link rel="stylesheet" type="text/css" href="../styles/left.css">
+        <link rel="stylesheet" type="text/css" href="../styles/menu.css">
+        <link rel="stylesheet" type="text/css" href="../styles/modal.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.20.0/min/vs/loader.min.js"></script>
+    </head>
+<body>
+
+    <!-- Draggable Element -->
+<div class="draggable" draggable="true">Cracked by whatman lol</div>
+
+<script>
+    // Get the draggable element
+    var draggableElement = document.querySelector('.draggable');
+
+    // Variables to store the position
+    var offsetX, offsetY;
+
+    // Function to handle the drag start event
+    function dragStart(event) {
+        // Calculate the offset when dragging starts
+        offsetX = event.clientX - draggableElement.getBoundingClientRect().left;
+        offsetY = event.clientY - draggableElement.getBoundingClientRect().top;
+    }
+
+    // Function to handle the drag over event
+    function dragOver(event) {
+        // Prevent default behavior to allow dropping
+        event.preventDefault();
+    }
+
+    // Function to handle the drag event
+    function drag(event) {
+        // Update the position of the element
+        draggableElement.style.left = (event.clientX - offsetX) + 'px';
+        draggableElement.style.top = (event.clientY - offsetY) + 'px';
+    }
+
+    // Attach event listeners
+    draggableElement.addEventListener('dragstart', dragStart);
+    document.addEventListener('dragover', dragOver);
+    document.addEventListener('drag', drag);
+</script>
+
+<div class="top-container">
+    <img src="../assets/honey.png" class="logo">
+        <div class="menu-items">
+            <a href="#">File</a>
+                <a href="#">Edit</a>
+                <a href="#">View</a>
+                <a href="#">Help</a>
+            </div>
+            <div class="search-container">
+                <input type="text" placeholder="Search">
+                <svg viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>search</title> <desc>Created with Sketch Beta.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage"> <g id="Icon-Set" sketch:type="MSLayerGroup" transform="translate(-256.000000, -1139.000000)" fill="#ffffff"> <path d="M269.46,1163.45 C263.17,1163.45 258.071,1158.44 258.071,1152.25 C258.071,1146.06 263.17,1141.04 269.46,1141.04 C275.75,1141.04 280.85,1146.06 280.85,1152.25 C280.85,1158.44 275.75,1163.45 269.46,1163.45 L269.46,1163.45 Z M287.688,1169.25 L279.429,1161.12 C281.591,1158.77 282.92,1155.67 282.92,1152.25 C282.92,1144.93 276.894,1139 269.46,1139 C262.026,1139 256,1144.93 256,1152.25 C256,1159.56 262.026,1165.49 269.46,1165.49 C272.672,1165.49 275.618,1164.38 277.932,1162.53 L286.224,1170.69 C286.629,1171.09 287.284,1171.09 287.688,1170.69 C288.093,1170.3 288.093,1169.65 287.688,1169.25 L287.688,1169.25 Z" id="search" sketch:type="MSShapeGroup"> </path> </g> </g> </g></svg>
+            </div>
+            <div class="user-info">
+                <img src="../assets/honey.png">
+            </div>
+        </div>
+        <div class="middle-container">
+            <div class="left-panel">
+                <div class="icon-buttons">
+                    <button><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24"><path fill="white" d="M2 12.204c0-2.289 0-3.433.52-4.381c.518-.949 1.467-1.537 3.364-2.715l2-1.241C9.889 2.622 10.892 2 12 2c1.108 0 2.11.622 4.116 1.867l2 1.241c1.897 1.178 2.846 1.766 3.365 2.715c.519.948.519 2.092.519 4.38v1.522c0 3.9 0 5.851-1.172 7.063C19.657 22 17.771 22 14 22h-4c-3.771 0-5.657 0-6.828-1.212C2 19.576 2 17.626 2 13.725z" opacity=".5"/><path fill="white" d="M11.25 18a.75.75 0 0 0 1.5 0v-3a.75.75 0 0 0-1.5 0z"/></svg></button>
+                    <button><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24"><path fill="white" d="M2 12c0-4.714 0-7.071 1.464-8.536C4.93 2 7.286 2 12 2c4.714 0 7.071 0 8.535 1.464C22 4.93 22 7.286 22 12c0 4.714 0 7.071-1.465 8.535C19.072 22 16.714 22 12 22s-7.071 0-8.536-1.465C2 19.072 2 16.714 2 12" opacity=".5"/><path fill="white" d="M13.488 6.446a.75.75 0 0 1 .53.918l-2.588 9.66a.75.75 0 0 1-1.449-.389l2.589-9.659a.75.75 0 0 1 .918-.53M14.97 8.47a.75.75 0 0 1 1.06 0l.209.208c.635.635 1.165 1.165 1.529 1.642c.384.504.654 1.036.654 1.68c0 .644-.27 1.176-.654 1.68c-.364.477-.894 1.007-1.53 1.642l-.208.208a.75.75 0 1 1-1.06-1.06l.171-.172c.682-.682 1.139-1.14 1.434-1.528c.283-.37.347-.586.347-.77c0-.184-.064-.4-.347-.77c-.295-.387-.752-.846-1.434-1.528l-.171-.172a.75.75 0 0 1 0-1.06m-7 0a.75.75 0 0 1 1.06 1.06l-.171.172c-.682.682-1.138 1.14-1.434 1.528c-.283.37-.346.586-.346.77c0 .184.063.4.346.77c.296.387.752.846 1.434 1.528l.172.172a.75.75 0 1 1-1.061 1.06l-.208-.208c-.636-.635-1.166-1.165-1.53-1.642c-.384-.504-.653-1.036-.653-1.68c0-.644.27-1.176.653-1.68c.364-.477.894-1.007 1.53-1.642z"/></svg></button>
+                    <button><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24"><path fill="white" fill-rule="evenodd" d="M12.428 2c-1.114 0-2.129.6-4.157 1.802l-.686.406C5.555 5.41 4.542 6.011 3.985 7c-.557.99-.557 2.19-.557 4.594v.812c0 2.403 0 3.605.557 4.594c.557.99 1.57 1.59 3.6 2.791l.686.407C10.299 21.399 11.314 22 12.428 22c1.114 0 2.128-.6 4.157-1.802l.686-.407c2.028-1.2 3.043-1.802 3.6-2.791c.557-.99.557-2.19.557-4.594v-.812c0-2.403 0-3.605-.557-4.594c-.557-.99-1.572-1.59-3.6-2.792l-.686-.406C14.555 2.601 13.542 2 12.428 2" clip-rule="evenodd" opacity=".5"/><path fill="white" d="M12.428 8.25a3.75 3.75 0 1 0 0 7.5a3.75 3.75 0 0 0 0-7.5"/></svg></button>
+                </div>
+                <div class="home">
+                    <p id="title">Widgets</p>
+                    <p id="description">View the scripts your have</p>
+                    <button id="widgetModalOpen"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="white" d="M1 12c0-5.185 0-7.778 1.61-9.39C4.223 1 6.816 1 12 1c5.185 0 7.778 0 9.39 1.61C23 4.223 23 6.816 23 12c0 5.185 0 7.778-1.61 9.39C19.777 23 17.184 23 12 23c-5.185 0-7.778 0-9.39-1.61C1 19.777 1 17.184 1 12" opacity=".5"/><path fill="white" d="M13.926 14.302c.245-.191.467-.413.912-.858l5.54-5.54c.134-.134.073-.365-.106-.427a6.066 6.066 0 0 1-2.3-1.449a6.066 6.066 0 0 1-1.45-2.3c-.061-.18-.292-.24-.426-.106l-5.54 5.54c-.445.444-.667.667-.858.912a5.045 5.045 0 0 0-.577.932c-.133.28-.233.579-.431 1.175l-.257.77l-.409 1.226l-.382 1.148a.817.817 0 0 0 1.032 1.033l1.15-.383l1.224-.408l.77-.257c.597-.199.895-.298 1.175-.432a5.03 5.03 0 0 0 .933-.576m8.187-8.132a3.028 3.028 0 0 0-4.282-4.283l-.179.178a.734.734 0 0 0-.206.651c.027.15.077.37.168.633a4.911 4.911 0 0 0 1.174 1.863a4.91 4.91 0 0 0 1.862 1.174c.263.09.483.141.633.168c.24.043.48-.035.652-.207z"/></svg><p>New Widget</p>
+                    </button>
+                    <div class="news-container">
+                        <div class="news-item">
+                            <div class="news-header">
+                                <img class="news-icon" src="../assets/honey.png">
+                                <p>News</p>
+                            </div>
+                            <p class="news-title">Vision brokie edition Release!</p>
+                            <p class="news-description">Vision has officially released! 1/5/2023</p>
+                        </div>
+                        <div class="news-item">
+                            <div class="news-header">
+                                <img class="news-icon" src="../assets/honey.png">
+                                <p>News</p>
+                            </div>
+                            <p class="news-title">Vision Release!</p>
+                            <p class="news-description">Vision has officially released! 1/5/2023</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="script">
+                    <p id="title">Script Viewer</p>
+                    <p id="description">View your scripts stored locally lmao</p>
+                    <button><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="white" d="M22 14v-2.202c0-2.632 0-3.949-.77-4.804a2.984 2.984 0 0 0-.224-.225C20.151 6 18.834 6 16.202 6h-.374c-1.153 0-1.73 0-2.268-.153a4 4 0 0 1-.848-.352C12.224 5.224 11.816 4.815 11 4l-.55-.55c-.274-.274-.41-.41-.554-.53a4 4 0 0 0-2.18-.903C7.53 2 7.336 2 6.95 2c-.883 0-1.324 0-1.692.07A4 4 0 0 0 2.07 5.257C2 5.626 2 6.068 2 6.95V14c0 3.771 0 5.657 1.172 6.828C4.343 22 6.229 22 10 22h4c3.771 0 5.657 0 6.828-1.172C22 19.657 22 17.771 22 14" opacity=".5"/><path fill="white" d="M12.25 10a.75.75 0 0 1 .75-.75h5a.75.75 0 0 1 0 1.5h-5a.75.75 0 0 1-.75-.75"/></svg><p>New Folder</p>
+                    </button>
+                </div>
+                <div class="settings">
+                    <p id="title">Settings</p>
+                    <p id="description">Modify Broke to your liking</p>
+                    <button><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="white" fill-rule="evenodd" d="M12 3c.385 0 .698.312.698.698v2.79c.51.002.974.005 1.395.017V3.698a.698.698 0 0 1 1.395 0v2.79a.703.703 0 0 1-.008.108c.936.115 1.585.353 2.078.846c.493.493.731 1.142.846 2.078a.702.702 0 0 1 .108-.008h2.79a.698.698 0 0 1 0 1.395h-2.807c.012.421.016.885.017 1.395h2.79a.698.698 0 0 1 0 1.396h-2.79c-.002.51-.005.974-.017 1.395h2.807a.698.698 0 0 1 0 1.395h-2.79a.703.703 0 0 1-.108-.008c-.115.936-.353 1.585-.846 2.078c-.493.493-1.142.731-2.078.846a.639.639 0 0 1 .008.108v2.79a.698.698 0 0 1-1.395 0v-2.807a53.57 53.57 0 0 1-1.395.017v2.79a.698.698 0 0 1-1.396 0v-2.79a56.16 56.16 0 0 1-1.395-.017v2.807a.698.698 0 0 1-1.395 0v-2.79c0-.037.002-.073.008-.108c-.936-.115-1.585-.353-2.078-.846c-.493-.493-.731-1.142-.846-2.078a.703.703 0 0 1-.108.008h-2.79a.698.698 0 0 1 0-1.395h2.807a56.235 56.235 0 0 1-.017-1.395h-2.79a.698.698 0 0 1 0-1.396h2.79c.002-.51.005-.974.017-1.395H2.698a.698.698 0 0 1 0-1.395h2.79c.037 0 .073.002.108.008c.115-.936.353-1.585.846-2.078c.493-.493 1.142-.731 2.078-.846a.702.702 0 0 1-.008-.108v-2.79a.698.698 0 0 1 1.395 0v2.807a53.57 53.57 0 0 1 1.395-.017v-2.79c0-.386.313-.698.698-.698m-.976 5.581c-.619 0-1.152 0-1.578.058c-.458.061-.896.2-1.252.555c-.355.356-.494.794-.555 1.252c-.058.427-.058.96-.058 1.578v1.952c0 .619 0 1.151.058 1.578c.061.458.2.896.555 1.252c.356.355.794.494 1.252.555c.426.058.96.058 1.578.058h1.952c.619 0 1.151 0 1.578-.058c.458-.061.896-.2 1.252-.555c.355-.356.494-.794.555-1.252c.058-.427.058-.96.058-1.578v-1.952c0-.619 0-1.151-.058-1.578c-.061-.458-.2-.896-.555-1.252c-.356-.355-.794-.494-1.252-.555c-.427-.058-.96-.058-1.578-.058z" clip-rule="evenodd"/><path fill="white" d="M9.18 10.18c.054-.052.149-.118.451-.159c.323-.043.761-.044 1.439-.044h1.86c.678 0 1.116.001 1.438.044c.303.041.398.107.45.16c.054.053.12.148.16.45c.044.323.045.761.045 1.439v1.86c0 .678-.001 1.116-.045 1.438c-.04.303-.106.398-.16.45c-.052.054-.147.12-.45.16c-.322.044-.76.045-1.438.045h-1.86c-.678 0-1.116-.001-1.439-.045c-.302-.04-.397-.106-.45-.16c-.053-.052-.119-.147-.16-.45c-.043-.322-.044-.76-.044-1.438v-1.86c0-.678.001-1.116.044-1.438c.041-.303.107-.398.16-.451" opacity=".5"/></svg><p>General</p></button>
+                    <button><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="white" d="M8.422 20.618C10.178 21.54 11.056 22 12 22V12L2.638 7.073a3.196 3.196 0 0 0-.04.067C2 8.154 2 9.417 2 11.942v.117c0 2.524 0 3.787.597 4.801c.598 1.015 1.674 1.58 3.825 2.709z"/><path fill="white" d="m17.577 4.432l-2-1.05C13.822 2.461 12.944 2 12 2c-.945 0-1.822.46-3.578 1.382l-2 1.05C4.318 5.536 3.242 6.1 2.638 7.072L12 12l9.362-4.927c-.606-.973-1.68-1.537-3.785-2.641" opacity=".7"/><path fill="white" d="M21.403 7.14a3.153 3.153 0 0 0-.041-.067L12 12v10c.944 0 1.822-.46 3.578-1.382l2-1.05c2.151-1.129 3.227-1.693 3.825-2.708c.597-1.014.597-2.277.597-4.8v-.117c0-2.525 0-3.788-.597-4.802" opacity=".5"/></svg><p>Core</p></button>
+                    <button><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="white" d="M2 6.21c0-1.984 0-2.977.659-3.593C3.318 2 4.379 2 6.5 2c2.121 0 3.182 0 3.841.617C11 3.233 11 4.226 11 6.21v11.58c0 1.984 0 2.977-.659 3.593C9.682 22 8.621 22 6.5 22c-2.121 0-3.182 0-3.841-.617C2 20.767 2 19.774 2 17.79z" opacity=".5"/><path fill="white" d="M13 15.4c0-2.074 0-3.111.659-3.756C14.318 11 15.379 11 17.5 11c2.121 0 3.182 0 3.841.644C22 12.29 22 13.326 22 15.4v2.2c0 2.074 0 3.111-.659 3.756c-.659.644-1.72.644-3.841.644c-2.121 0-3.182 0-3.841-.644C13 20.71 13 19.674 13 17.6zm0-9.9c0-1.087 0-1.63.171-2.06a2.293 2.293 0 0 1 1.218-1.262C14.802 2 15.327 2 16.375 2h2.25c1.048 0 1.573 0 1.986.178c.551.236.99.69 1.218 1.262c.171.43.171.973.171 2.06c0 1.087 0 1.63-.171 2.06a2.293 2.293 0 0 1-1.218 1.262C20.198 9 19.673 9 18.625 9h-2.25c-1.048 0-1.573 0-1.986-.178a2.293 2.293 0 0 1-1.218-1.262C13 7.13 13 6.587 13 5.5"/></svg><p>User Interface</p></button>
+                </div>
+            </div>
+            <div id="editor-container" class="editor-container">
+                <div class="tabs">
+                    <div id="tabList"></div>
+                    <button class="add-tab" id="addTabButton" onclick="addTab()"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="white" d="M12 22c-4.714 0-7.071 0-8.536-1.465C2 19.072 2 16.714 2 12s0-7.071 1.464-8.536C4.93 2 7.286 2 12 2c4.714 0 7.071 0 8.535 1.464C22 4.93 22 7.286 22 12c0 4.714 0 7.071-1.465 8.535C19.072 22 16.714 22 12 22" opacity=".5"/><path fill="white" d="M12 8.25a.75.75 0 0 1 .75.75v2.25H15a.75.75 0 0 1 0 1.5h-2.25V15a.75.75 0 0 1-1.5 0v-2.25H9a.75.75 0 0 1 0-1.5h2.25V9a.75.75 0 0 1 .75-.75"/></svg></button>
+                </div>
+            </div>
+            <div id="action-buttons">
+                <button id="attach"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="white" fill-rule="evenodd" d="M3.213 3.213a4.142 4.142 0 0 0 0 5.858L14.93 20.787a4.142 4.142 0 0 0 5.858-5.858L9.07 3.213a4.142 4.142 0 0 0-5.858 0m6.132 5.018A.788.788 0 1 0 8.23 9.345A.788.788 0 0 0 9.345 8.23m2.784.928a.787.787 0 1 0-1.114 1.114a.787.787 0 0 0 1.114-1.114m3.712 3.712a.788.788 0 1 1-1.114 1.114a.788.788 0 0 1 1.114-1.114m.929 3.899a.787.787 0 1 0-1.114-1.114a.787.787 0 0 0 1.114 1.114m-3.713-3.713a.787.787 0 1 0-1.113-1.114a.787.787 0 0 0 1.113 1.114m.928 1.67a.788.788 0 1 1-1.114 1.114a.788.788 0 0 1 1.114-1.113M9.16 11.016a.787.787 0 1 1 1.114 1.114a.787.787 0 0 1-1.114-1.114" clip-rule="evenodd"/><path fill="white" d="M20.787 9.071a4.142 4.142 0 0 0-5.858-5.858L12 6.143L17.858 12zM12 17.858L6.142 12l-2.929 2.929a4.142 4.142 0 0 0 5.858 5.858z" opacity=".5"/></svg></button>
+                <button id="execute"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24"><path fill="white" fill-rule="evenodd" d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2S2 6.477 2 12s4.477 10 10 10" clip-rule="evenodd" opacity=".5"/><path fill="white" d="m15.414 13.059l-4.72 2.787C9.934 16.294 9 15.71 9 14.786V9.214c0-.924.934-1.507 1.694-1.059l4.72 2.787c.781.462.781 1.656 0 2.118"/></svg></button>
+                <button id="clear"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24"><path fill="white" d="M22.53 2.53a.75.75 0 1 0-1.06-1.06l-2.403 2.402a4.471 4.471 0 0 1 1.061 1.06zM2.449 11.411l.74 1.218a24.449 24.449 0 0 0 8.181 8.181l1.219.741c1.898.97 4.353.347 5.414-1.661c.5-.949.977-2.012 1.279-3.07a19.46 19.46 0 0 0 .712-4.33c.033-.64.049-.961-.104-1.357c-.152-.395-.416-.66-.944-1.187L14.12 5.12c-.491-.491-.737-.737-1.107-.89c-.37-.151-.664-.15-1.253-.148a17.191 17.191 0 0 0-4.581.635c-1.057.302-2.12.778-3.069 1.28c-2.008 1.06-2.63 3.515-1.661 5.413" opacity=".5"/><path fill="white" d="M19.643 4.358a4.445 4.445 0 0 0-6.287 0l-.038.037c.232.156.456.38.802.726l4.825 4.825c.302.302.518.517.675.72l.023-.022a4.445 4.445 0 0 0 0-6.286"/></svg></button>
+            </div>
+            <div id="home-container">
+                <div class="welcome-section">
+                    <div class="welcome-header">
+                      <img src="../assets/honey.png">
+                        <div>
+                            <h1>Sup,Cutie</h1>
+                            <p>Check out the latest scripts rn!</p>
+                        </div>
+                    </div>
+                </div>
+                    <div class="scripts-section">
+                        <div class="script-item">
+                            <div class="script-content">
+                                <h2>Script</h2>
+                                <p>keep yapping</p>
+                            </div>
+                            <div class="script-buttons">
+                                <button class="script-button">Execute</button>
+                                <button class="script-button">More Info</button>
+                            </div>
+                        </div>
+                        <div class="script-item">
+                            <div class="script-content">
+                                <h2>Script</h2>
+                                <p>keep yapping</p>
+                            </div>
+                            <div class="script-buttons">
+                                <button class="script-button">Execute</button>
+                                <button class="script-button">More Info</button>
+                            </div>
+                        </div>
+                        <div class="script-item">
+                            <div class="script-content">
+                                <h2>Script</h2>
+                                <p>keep yapping</p>
+                            </div>
+                            <div class="script-buttons">
+                                <button class="script-button">Execute</button>
+                                <button class="script-button">More Info</button>
+                            </div>
+                        </div>
+                  </div>
+            </div>
+            <div id="settings-container">
+                <div class="settings-item">
+                    <div class="settings-content">
+                        <h2>Auto Inject</h2>
+                        <p>Automatically injects brokie into Roblox once a process has opened.</p>
+                    </div>
+                    <input type="checkbox" class="settings-button" id="checkbox1" />
+                    <label for="checkbox1"></label>
+                </div>
+            </div>
+        </div>
+        <div class="menu">
+            <button id="close-button" class="menu-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="white" d="M12 22c-4.714 0-7.071 0-8.536-1.465C2 19.072 2 16.714 2 12s0-7.071 1.464-8.536C4.93 2 7.286 2 12 2c4.714 0 7.071 0 8.535 1.464C22 4.93 22 7.286 22 12c0 4.714 0 7.071-1.465 8.535C19.072 22 16.714 22 12 22" opacity=".5"/><path fill="white" d="M8.97 8.97a.75.75 0 0 1 1.06 0L12 10.94l1.97-1.97a.75.75 0 1 1 1.06 1.06L13.06 12l1.97 1.97a.75.75 0 1 1-1.06 1.06L12 13.06l-1.97 1.97a.75.75 0 0 1-1.06-1.06L10.94 12l-1.97-1.97a.75.75 0 0 1 0-1.06"/></svg><p class="menu-title">Close</p></button>
+            <button id="rename-button" class="menu-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="white" d="M1 12c0-5.185 0-7.778 1.61-9.39C4.223 1 6.816 1 12 1c5.185 0 7.778 0 9.39 1.61C23 4.223 23 6.816 23 12c0 5.185 0 7.778-1.61 9.39C19.777 23 17.184 23 12 23c-5.185 0-7.778 0-9.39-1.61C1 19.777 1 17.184 1 12" opacity=".5"/><path fill="white" d="M13.926 14.302c.245-.191.467-.413.912-.858l5.54-5.54c.134-.134.073-.365-.106-.427a6.066 6.066 0 0 1-2.3-1.449a6.066 6.066 0 0 1-1.45-2.3c-.061-.18-.292-.24-.426-.106l-5.54 5.54c-.445.444-.667.667-.858.912a5.045 5.045 0 0 0-.577.932c-.133.28-.233.579-.431 1.175l-.257.77l-.409 1.226l-.382 1.148a.817.817 0 0 0 1.032 1.033l1.15-.383l1.224-.408l.77-.257c.597-.199.895-.298 1.175-.432a5.03 5.03 0 0 0 .933-.576m8.187-8.132a3.028 3.028 0 0 0-4.282-4.283l-.179.178a.734.734 0 0 0-.206.651c.027.15.077.37.168.633a4.911 4.911 0 0 0 1.174 1.863a4.91 4.91 0 0 0 1.862 1.174c.263.09.483.141.633.168c.24.043.48-.035.652-.207z"/></svg><p class="menu-title">Rename</p></button>
+            <button id="duplicate-button" class="menu-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="white" d="M6.6 11.397c0-2.726 0-4.089.843-4.936c.844-.847 2.201-.847 4.917-.847h2.88c2.715 0 4.073 0 4.916.847c.844.847.844 2.21.844 4.936v4.82c0 2.726 0 4.089-.844 4.936c-.843.847-2.201.847-4.916.847h-2.88c-2.716 0-4.073 0-4.917-.847c-.843-.847-.843-2.21-.843-4.936z"/><path fill="white" d="M4.172 3.172C3 4.343 3 6.229 3 10v2c0 3.771 0 5.657 1.172 6.828c.617.618 1.433.91 2.62 1.048c-.192-.84-.192-1.996-.192-3.66v-4.819c0-2.726 0-4.089.843-4.936c.844-.847 2.201-.847 4.917-.847h2.88c1.652 0 2.8 0 3.638.19c-.138-1.193-.43-2.012-1.05-2.632C16.657 2 14.771 2 11 2C7.229 2 5.343 2 4.172 3.172" opacity=".5"/></svg><p class="menu-title">Duplicate</p></button>
+            <button id="save-button" class="menu-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="white" d="M2 12c0-4.714 0-7.071 1.464-8.536C4.93 2 7.286 2 12 2c4.714 0 7.071 0 8.535 1.464C22 4.93 22 7.286 22 12c0 4.714 0 7.071-1.465 8.535C19.072 22 16.714 22 12 22s-7.071 0-8.536-1.465C2 19.072 2 16.714 2 12" opacity=".5"/><path fill="white" d="M12.75 7a.75.75 0 0 0-1.5 0v5.19l-1.72-1.72a.75.75 0 0 0-1.06 1.06l3 3a.75.75 0 0 0 1.06 0l3-3a.75.75 0 1 0-1.06-1.06l-1.72 1.72zM8 16.25a.75.75 0 0 0 0 1.5h8a.75.75 0 0 0 0-1.5z"/></svg><p class="menu-title">Save</p></button>
+            <button id="saveall-button" class="menu-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="white" d="M2 12c0-4.714 0-7.071 1.464-8.536C4.93 2 7.286 2 12 2c4.714 0 7.071 0 8.535 1.464C22 4.93 22 7.286 22 12c0 4.714 0 7.071-1.465 8.535C19.072 22 16.714 22 12 22s-7.071 0-8.536-1.465C2 19.072 2 16.714 2 12" opacity=".5"/><path fill="white" d="M8.5 6.25a.75.75 0 0 1 .75.75v4.929l1.174-1.41a.75.75 0 0 1 1.152.961l-2.5 3a.75.75 0 0 1-1.152 0l-2.5-3a.75.75 0 1 1 1.152-.96l1.174 1.409V7a.75.75 0 0 1 .75-.75m7 0a.75.75 0 0 1 .75.75v4.929l1.174-1.41a.75.75 0 0 1 1.152.961l-2.5 3a.75.75 0 0 1-1.152 0l-2.5-3a.75.75 0 1 1 1.152-.96l1.174 1.409V7a.75.75 0 0 1 .75-.75m-9.5 10a.75.75 0 0 0 0 1.5h12a.75.75 0 0 0 0-1.5z"/></svg><p class="menu-title">Save All</p></button>
+            <button id="pin-button" class="menu-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="white" fill-rule="evenodd" d="m16.219 4.838l2.964 2.967c2.012 2.014 3.018 3.021 2.784 4.107c-.235 1.085-1.567 1.585-4.23 2.586l-1.845.693c-.713.268-1.07.402-1.345.64c-.12.105-.229.223-.322.352c-.212.297-.313.664-.515 1.4c-.46 1.672-.69 2.508-1.239 2.821c-.23.132-.492.2-.758.2c-.63 0-1.243-.614-2.469-1.84l-1.466-1.468l-1.079-1.08L5.285 14.8c-1.218-1.219-1.827-1.828-1.83-2.455a1.528 1.528 0 0 1 .203-.773c.313-.543 1.143-.772 2.803-1.23c.737-.203 1.105-.304 1.402-.517c.132-.096.253-.207.36-.332c.236-.278.368-.637.63-1.355l.669-1.823c.987-2.693 1.48-4.04 2.568-4.28c1.089-.24 2.102.774 4.129 2.803" clip-rule="evenodd" opacity=".5"/><path fill="white" d="m3.302 21.776l4.476-4.48l-1.079-1.08l-4.476 4.48a.764.764 0 0 0 1.08 1.08"/></svg><p class="menu-title">Pin/Unpin Tab</p></button>
+            <button id="closeall-button" class="menu-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="white" d="M12 22c-4.714 0-7.071 0-8.536-1.465C2 19.072 2 16.714 2 12s0-7.071 1.464-8.536C4.93 2 7.286 2 12 2c4.714 0 7.071 0 8.535 1.464C22 4.93 22 7.286 22 12c0 4.714 0 7.071-1.465 8.535C19.072 22 16.714 22 12 22" opacity=".5"/><path fill="white" d="M8.97 8.97a.75.75 0 0 1 1.06 0L12 10.94l1.97-1.97a.75.75 0 1 1 1.06 1.06L13.06 12l1.97 1.97a.75.75 0 1 1-1.06 1.06L12 13.06l-1.97 1.97a.75.75 0 0 1-1.06-1.06L10.94 12l-1.97-1.97a.75.75 0 0 1 0-1.06"/></svg><p class="menu-title">Close All</p></button>
+            <button id="closeright-button" class="menu-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="white" d="M12 22c-4.714 0-7.071 0-8.536-1.465C2 19.072 2 16.714 2 12s0-7.071 1.464-8.536C4.93 2 7.286 2 12 2c4.714 0 7.071 0 8.535 1.464C22 4.93 22 7.286 22 12c0 4.714 0 7.071-1.465 8.535C19.072 22 16.714 22 12 22" opacity=".5"/><path fill="white" d="M8.97 8.97a.75.75 0 0 1 1.06 0L12 10.94l1.97-1.97a.75.75 0 1 1 1.06 1.06L13.06 12l1.97 1.97a.75.75 0 1 1-1.06 1.06L12 13.06l-1.97 1.97a.75.75 0 0 1-1.06-1.06L10.94 12l-1.97-1.97a.75.75 0 0 1 0-1.06"/></svg><p class="menu-title">Close to the Right</p></button>
+        </div>
+        <div id="wigetModal" class="modal">
+            <div class="modal-content">
+                <span class="close">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="white" d="M12 22c-4.714 0-7.071 0-8.536-1.465C2 19.072 2 16.714 2 12s0-7.071 1.464-8.536C4.93 2 7.286 2 12 2c4.714 0 7.071 0 8.535 1.464C22 4.93 22 7.286 22 12c0 4.714 0 7.071-1.465 8.535C19.072 22 16.714 22 12 22" opacity=".5"/><path fill="white" d="M8.97 8.97a.75.75 0 0 1 1.06 0L12 10.94l1.97-1.97a.75.75 0 1 1 1.06 1.06L13.06 12l1.97 1.97a.75.75 0 1 1-1.06 1.06L12 13.06l-1.97 1.97a.75.75 0 0 1-1.06-1.06L10.94 12l-1.97-1.97a.75.75 0 0 1 0-1.06"/></svg>
+                </span>
+                <div class="header">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="white" d="M1 12c0-5.185 0-7.778 1.61-9.39C4.223 1 6.816 1 12 1c5.185 0 7.778 0 9.39 1.61C23 4.223 23 6.816 23 12c0 5.185 0 7.778-1.61 9.39C19.777 23 17.184 23 12 23c-5.185 0-7.778 0-9.39-1.61C1 19.777 1 17.184 1 12" opacity=".5"/><path fill="white" d="M13.926 14.302c.245-.191.467-.413.912-.858l5.54-5.54c.134-.134.073-.365-.106-.427a6.066 6.066 0 0 1-2.3-1.449a6.066 6.066 0 0 1-1.45-2.3c-.061-.18-.292-.24-.426-.106l-5.54 5.54c-.445.444-.667.667-.858.912a5.045 5.045 0 0 0-.577.932c-.133.28-.233.579-.431 1.175l-.257.77l-.409 1.226l-.382 1.148a.817.817 0 0 0 1.032 1.033l1.15-.383l1.224-.408l.77-.257c.597-.199.895-.298 1.175-.432a5.03 5.03 0 0 0 .933-.576m8.187-8.132a3.028 3.028 0 0 0-4.282-4.283l-.179.178a.734.734 0 0 0-.206.651c.027.15.077.37.168.633a4.911 4.911 0 0 0 1.174 1.863a4.91 4.91 0 0 0 1.862 1.174c.263.09.483.141.633.168c.24.043.48-.035.652-.207z"/></svg>
+                    <h2>Create Widget</h2>
+                </div>
+                <form id="widgetForm">
+                    <div class="form-group">
+                        <label for="widgetTitle">Title:</label>
+                        <input type="text" id="widgetTitle" name="widgetTitle" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="widgetDescription">Description:</label>
+                        <textarea id="widgetDescription" name="widgetDescription" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="widgetScript">Script:</label>
+                        <textarea id="widgetScript" name="widgetScript" required></textarea>
+                    </div>
+                    <button type="submit" id="confirmButton">CREATE</button>
+                </form>
+            </div>
+        </div>
+        <script src="../js/main.js"></script>
+  </body>
+</html>
